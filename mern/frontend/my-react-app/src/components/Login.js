@@ -13,7 +13,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                'https://musicmarket215.onrender.com/login',
+                'https://musicmarket215.onrender.com/api/auth/login',
                 { username, password }
             );
 
@@ -56,5 +56,6 @@ const Login = () => {
 };
 
 export default Login;
+
 
 
