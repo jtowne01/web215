@@ -6,7 +6,8 @@ const instrumentSchema = new mongoose.Schema({
     model: String,
     price: Number,
     condition: String,
-    status: String,
+    usedOrNew: String,
 });
+
 
 module.exports = mongoose.model('Instrument', instrumentSchema);
