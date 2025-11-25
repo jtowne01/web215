@@ -5,7 +5,6 @@ const auth = require('../middleware/auth');
 
 console.log("Instruments route loaded!");
 
-// GET all instruments
 router.get('/', async (req, res) => {
     try {
         const instruments = await Instrument.find();
@@ -16,7 +15,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// CREATE new instrument
 router.post('/', auth, async (req, res) => {
     try {
         const newInstrument = new Instrument(req.body);
@@ -27,7 +25,6 @@ router.post('/', auth, async (req, res) => {
     }
 });
 
-// UPDATE instrument
 router.put('/:id', auth, async (req, res) => {
     try {
         const updated = await Instrument.findByIdAndUpdate(
@@ -41,7 +38,6 @@ router.put('/:id', auth, async (req, res) => {
     }
 });
 
-// DELETE instrument
 router.delete('/:id', auth, async (req, res) => {
     try {
         await Instrument.findByIdAndDelete(req.params.id);
@@ -52,3 +48,4 @@ router.delete('/:id', auth, async (req, res) => {
 });
 
 module.exports = router;
+
