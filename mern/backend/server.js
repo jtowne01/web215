@@ -30,7 +30,7 @@ app.use('/api/instruments', instrumentRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log("Server running"));
-const MONGO_URI = process.env.MONGODB_URI;
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
@@ -46,6 +46,7 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', (err) => {
     console.log("MongoDB error:", err);
 });
+
 
 
 
