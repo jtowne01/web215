@@ -1,0 +1,98 @@
+body {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  color: #333;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+footer, header {
+  background-color: #00171F;
+  color: #FFFFFF;
+  padding: 10px;
+  text-align: center;
+  font-size: 22px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a, footer a {
+  color: #00A8E8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main a {
+    text-decoration: underline;
+}
+
+nav a:hover, .navbar a:hover {
+  color: #95A3B3;
+}
+
+main {
+  padding: 20px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #99E2FF; 
+  font-size: 22px;
+  line-height: 1;
+  color: #222222;
+  min-height: 640px;
+}
+
+h1 {
+  color: #47D1FF;
+} 
+
+h2, h3, h4, h5, h6 {
+  color: #222222;
+}
+
+figure img {
+    max-height: 20%;
+    max-width: 20%;
+    display: block;
+    padding-bottom: 30px;
+}
+
+figcaption {
+    font-size: 22px;
+    color: #555;
+    text-align: left;
+    margin-top: -10px;
+}
+
+#course {
+    padding-left: 60px;
+}
+
+blockquote {
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 10px;
+
+}
