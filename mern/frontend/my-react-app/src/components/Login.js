@@ -13,7 +13,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                'https://jauntytegu.onrender.com/api/auth/login',
+                'https://musicmarket215.onrender.com/login',
                 { username, password }
             );
 
@@ -56,4 +56,5 @@ const Login = () => {
 };
 
 export default Login;
+
 
