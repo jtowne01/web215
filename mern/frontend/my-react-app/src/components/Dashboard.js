@@ -57,7 +57,7 @@ const Dashboard = () => {
             const token = localStorage.getItem("token");
 
             await axios.put(
-                `https://jauntytegu.onrender.com/api/instruments${id}`,
+                `https://jauntytegu.onrender.com/api/instruments/${id}`,
                 editForm,
                 {
                     headers: { Authorization: `Bearer ${token}` }
@@ -206,4 +206,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
