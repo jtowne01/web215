@@ -77,7 +77,7 @@ const Dashboard = () => {
             const token = localStorage.getItem("token");
 
             await axios.delete(
-                `https://jauntytegu.onrender.com/api/instruments${id}`,
+                `https://jauntytegu.onrender.com/api/instruments/${id}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
@@ -206,5 +206,6 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
 
