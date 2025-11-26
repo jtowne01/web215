@@ -27,7 +27,7 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div id="logreg">
             <h2>Login</h2>
             <form id="LoginReg" onSubmit={handleSubmit}>
                 <div>
@@ -56,6 +56,7 @@ const Login = () => {
 };
 
 export default Login;
+
 
 
 
