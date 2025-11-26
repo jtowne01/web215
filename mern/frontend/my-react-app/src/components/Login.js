@@ -29,9 +29,9 @@ const Login = () => {
     return (
         <div>
             <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
+            <form id="LoginReg" onSubmit={handleSubmit}>
                 <div>
-                    <label>Username:</label>
+                    <label>Username: </label>
                     <input
                         type="text"
                         value={username}
@@ -40,7 +40,7 @@ const Login = () => {
                 </div>
 
                 <div>
-                    <label>Password:</label>
+                    <label>Password: </label>
                     <input
                         type="password"
                         value={password}
@@ -48,7 +48,7 @@ const Login = () => {
                     />
                 </div>
 
-                <button type="submit">Login</button>
+                <button id="account" type="submit">Login</button>
             </form>
              <p>Don't have an account? <a href="/register">Register here</a></p>
         </div>
@@ -56,6 +56,7 @@ const Login = () => {
 };
 
 export default Login;
+
 
 
 
