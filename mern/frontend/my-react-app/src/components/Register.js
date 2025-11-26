@@ -29,9 +29,9 @@ const Register = () => {
         <div>
             <h2>Register</h2>
         
-        <form onSubmit={handleSubmit}>
+        <form id="LoginReg" onSubmit={handleSubmit}>
             <div>
-                <label>Username:</label>
+                <label>Username: </label>
                 <input 
                     type="text"
                     value={username}
@@ -39,7 +39,7 @@ const Register = () => {
                 />
             </div>
             <div>
-                <label>Password:</label>
+                <label>Password: </label>
                 <input 
                     type="password"
                     value={password}
@@ -47,7 +47,7 @@ const Register = () => {
                 />
             </div>
 
-            <button type="submit">Register</button>
+            <button id="account" type="submit">Register</button>
         </form>
         <p>Already have an account? <a href="/login">Login here</a></p>
         </div>
@@ -56,3 +56,4 @@ const Register = () => {
 
 
 export default Register;
+
