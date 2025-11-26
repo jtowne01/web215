@@ -26,7 +26,7 @@ const Register = () => {
     };
 
     return (
-        <div>
+        <div id="logreg">
             <h2>Register</h2>
         
         <form id="LoginReg" onSubmit={handleSubmit}>
@@ -56,4 +56,5 @@ const Register = () => {
 
 
 export default Register;
+
 
