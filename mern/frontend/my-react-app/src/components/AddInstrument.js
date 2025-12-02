@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const AddInstrument = ({ onAdded }) => {
@@ -10,6 +10,15 @@ const AddInstrument = ({ onAdded }) => {
         condition: "",
         usedOrNew: ""
     });
+
+    const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        if (message) {
+            const timer = setTimeout(() => setMessage(""), 2500);
+            return () => clearTimeout(timer);
+        }
+    }, [message]);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,31 +36,38 @@ const AddInstrument = ({ onAdded }) => {
                 { headers: { Authorization: `Bearer ${token}` }}
             );
 
-            alert("Instrument added!");
-
+            setMessage("Instrument added!");
             onAdded();
         } catch (err) {
             console.error(err);
-            alert("You must be logged in to add an instrument.")
+            setMessage("Error adding instrument")
         }
     };
 
 return ( 
     <form onSubmit={handleSubmit}>
         <h3>Add New Instrument</h3>
+        
+                {message && (
+            <h3 style={{
+                color: "#0c5460",
+                padding: "10px",
+                borderRadius: "6px",
+                marginBottom: "10px"
+            }}>
+                {message}
+            </h3>
+        )}
+        <input name="instrument" placeholder="Instrument" onChange={handleChange} />
+        <input name="brand" placeholder="Brand" onChange={handleChange} />
+        <input name="model" placeholder="Model" onChange={handleChange} />
+        <input name="price" placeholder="Price" onChange={handleChange} />
+        <input name="condition" placeholder="Condition" onChange={handleChange} />
+        <input name="usedOrNew" placeholder="Used or New" onChange={handleChange} />
 
-        <input name="instrument" placeholder="Instrument" onChange={handleChange} required/>
-        <input name="brand" placeholder="Brand" onChange={handleChange} required/>
-        <input name="model" placeholder="Model" onChange={handleChange} required/>
-        <input name="price" placeholder="Price" onChange={handleChange} required/>
-        <input name="condition" placeholder="Condition" onChange={handleChange} required/>
-        <input name="usedOrNew" placeholder="Used or New" onChange={handleChange} required/>
-
-        <button type="submit">Add Instrument</button>
+        <button id="addinstrument" type="submit">Add Instrument</button>
     </form>
     );
 };
 
-
 export default AddInstrument;
-
