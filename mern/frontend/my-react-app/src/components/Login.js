@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
 
@@ -18,18 +19,20 @@ const Login = () => {
             );
 
             localStorage.setItem('token', response.data.token);
-
-            navigate('/dashboard');
+            setMessage("Login successful!");
+            setTimeout(() => {
+        navigate('/dashboard');
+    }, 1000);
         } catch (error) {
-            console.error(error);
-            alert("Invalid username or password");
+            setMessage("Invalid login credentials.");
         }
     };
 
     return (
         <div id="logreg">
             <h2>Login</h2>
-            <form id="LoginReg" onSubmit={handleSubmit}>
+            {message && <h3 className="message">{message}</h3>}
+            <form id ="LoginReg" onSubmit={handleSubmit}>
                 <div>
                     <label>Username: </label>
                     <input
@@ -47,7 +50,6 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-
                 <button id="account" type="submit">Login</button>
             </form>
              <p>Don't have an account? <a href="/register">Register here</a></p>
@@ -56,9 +58,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-
-
-
