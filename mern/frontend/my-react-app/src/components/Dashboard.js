@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AddInstrument from "./AddInstrument";
-axios.get(`${process.env.REACT_APP_API_URL}/api/instruments`);
 
 const Dashboard = () => {
     const navigate = useNavigate();
     const [instruments, setInstruments] = useState([]);
     const [editId, setEditId] = useState(null);
+    const [message, setMessage] = useState("");
 
     const [editForm, setEditForm] = useState({
         instrument: "",
@@ -18,12 +18,20 @@ const Dashboard = () => {
         usedOrNew: ""
     });
 
+    useEffect(() => {
+        if (message) {
+            const timer = setTimeout(() => setMessage(""), 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [message]);
+
     const loadInstruments = async () => {
         try {
             const response = await axios.get("https://jauntytegu.onrender.com/api/instruments");
-            setInstruments(response.data);
+            setInstruments(response.data.reverse());
         } catch (err) {
             console.error("Error loading instruments:", err);
+            setMessage("Error loading instruments.")
         }
     };
 
@@ -64,11 +72,12 @@ const Dashboard = () => {
                 }
             );
 
+            setMessage("Instrument updated!")
             setEditId(null);
             loadInstruments();
         } catch (err) {
             console.error("Save failed:", err);
-            alert("Save failed.");
+            setMessage("Save failed.");
         }
     };
 
@@ -81,18 +90,30 @@ const Dashboard = () => {
                 { headers: { Authorization: `Bearer ${token}` } }
             );
 
+            setMessage("Instrument deleted!")
             loadInstruments();
         } catch (err) {
             console.error("Delete failed:", err);
-            alert("Delete failed.");
+            setMessage("Delete failed.");
         }
     };
 
     return (
+        
         <div id="container" style={{ padding: "20px" }}>
             <h2>Inventory</h2>
-
-            {}
+            {message && (
+                <h3 
+                    style={{
+                        color: "#0c5460",
+                        padding: "10px",
+                        borderRadius: "6px",
+                        marginBottom: "10px"          
+                    }}
+                >
+                    {message}
+                </h3>
+            )}
             <AddInstrument onAdded={loadInstruments} />
 
             <table className="table table-bordered">
@@ -206,6 +227,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
-
