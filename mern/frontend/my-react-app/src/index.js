@@ -18,6 +18,8 @@ root.render(
                 <ul class="dropdown">
                 <li><a href="https://musicmarket215.onrender.com/login">Login</a></li>
                 <li><a href="https://musicmarket215.onrender.com/profile">Profile</a></li>
+                </ul>
+            </li>
         </ul>
       </nav>
     </header>
