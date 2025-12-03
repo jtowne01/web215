@@ -11,14 +11,13 @@ root.render(
       <h2>Welcome to Jaunty Tegu's Music Market</h2>
       <nav>
         <ul>
-            <li><a href="">GitHub Page</a></li> 
-            <li><a href="">Dashboard</a></li> 
+            <li><a href="https://jtowne01.github.io/web215/index.html">GitHub Page</a></li> 
+            <li><a href="https://musicmarket215.onrender.com/dashboard">Dashboard</a></li> 
             <li>
                 <a href="#">Account ▾</a>
                 <ul class="dropdown">
-                <li><a href="">Login</a></li>
-                <li><a href="">Profile</a></li>
-                <li><a href="">Logout</a></li>
+                <li><a href="https://musicmarket215.onrender.com/login">Login</a></li>
+                <li><a href="https://musicmarket215.onrender.com/profile">Profile</a></li>
         </ul>
       </nav>
     </header>
