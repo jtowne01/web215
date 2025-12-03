@@ -101,6 +101,24 @@ const Dashboard = () => {
     return (
         
         <div id="container" style={{ padding: "20px" }}>
+        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "15px" }}>
+            <button
+                onClick={() => {
+                    localStorage.removeItem("token");
+                    navigate("/login");
+                }}
+                style={{
+                    padding: "8px 14px",
+                    backgroundColor: "#47D1FF",
+                    color: "#333",
+                    border: "2px solid black",
+                    borderRadius: "5px",
+                    cursor: "pointer"
+                }}
+                >
+                    Logout
+                </button>
+        </div>
             <h2>Inventory</h2>
             {message && (
                 <h3 
@@ -227,3 +245,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
