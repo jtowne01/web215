@@ -11,8 +11,8 @@ const Profile = () => {
 
         if (!token) return navigate("/login");
 
-        axios.get("http://localhost:5000/api/auth/me", {
-            header: { Authorization: `Bearer ${token}` }
+        axios.get("https://jauntytegu.onrender.com/api/auth/me", {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
         .then(res => setUser(res.data))
         .catch(() => {
