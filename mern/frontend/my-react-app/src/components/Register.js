@@ -16,7 +16,7 @@ const Register = () => {
                 password
             });
 
-        alert ("Registration successful!");
+        setMessage("Registration successful!");
         navigate('/login');
 
         } catch (error) {
@@ -55,4 +55,5 @@ const Register = () => {
 };
 
 export default Register;
+
 
