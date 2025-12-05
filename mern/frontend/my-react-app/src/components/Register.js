@@ -21,7 +21,7 @@ const Register = () => {
 
         } catch (error) {
             console.error(error);
-            alert(error.response?.data?.message || "Registration failed.");
+            setMessage("Registration failed. Try a different username!");
         }
     };
 
@@ -55,3 +55,4 @@ const Register = () => {
 };
 
 export default Register;
+
