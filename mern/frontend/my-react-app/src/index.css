@@ -150,7 +150,7 @@ button#account {
     margin-left: 165px;
 }
 
-button#account:hover {
+button#account:hover, td button:hover {
     cursor: grab;
     background-color:aquamarine;
 }
