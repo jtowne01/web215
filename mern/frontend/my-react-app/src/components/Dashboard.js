@@ -230,7 +230,13 @@ const Dashboard = () => {
                                     <td>
                                         <button onClick={() => startEditing(item)}>Edit</button>
                                         {""}
-                                        <button onClick={() => deleteInstrument(item._id)}>
+                                        <button 
+                                            onClick={() => {
+                                                if (window.confirm(`Are you sure you want to delete ${item.brand} ${item.instrument}?`)) {
+                                                    deleteInstrument(item);
+                                                }
+                                            }}
+                                        >
                                             Delete
                                         </button>
                                     </td>
@@ -245,4 +251,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
