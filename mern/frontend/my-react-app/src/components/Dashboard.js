@@ -233,7 +233,7 @@ const Dashboard = () => {
                                         <button 
                                             onClick={() => {
                                                 if (window.confirm(`Are you sure you want to delete ${item.brand} ${item.instrument}?`)) {
-                                                    deleteInstrument(item);
+                                                    deleteInstrument(item._id);
                                                 }
                                             }}
                                         >
@@ -251,5 +251,6 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
 
 
