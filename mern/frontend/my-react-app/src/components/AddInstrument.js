@@ -60,12 +60,12 @@ return (
                 {message}
             </h3>
         )}
-        <input name="instrument" placeholder="Instrument" onChange={handleChange} />
-        <input name="brand" placeholder="Brand" onChange={handleChange} />
-        <input name="model" placeholder="Model" onChange={handleChange} />
-        <input name="price" placeholder="Price" onChange={handleChange} />
-        <input name="condition" placeholder="Condition" onChange={handleChange} />
-        <input name="usedOrNew" placeholder="Used or New" onChange={handleChange} />
+        <input name="instrument" placeholder="Instrument" onChange={handleChange} required/>
+        <input name="brand" placeholder="Brand" onChange={handleChange} required/>
+        <input name="model" placeholder="Model" onChange={handleChange} required/>
+        <input name="price" placeholder="Price" onChange={handleChange} required/>
+        <input name="condition" placeholder="Condition" onChange={handleChange} required/>
+        <input name="usedOrNew" placeholder="Used or New" onChange={handleChange} required/>
 
         <button id="addinstrument" type="submit">Add Instrument</button>
     </form>
@@ -73,3 +73,4 @@ return (
 };
 
 export default AddInstrument;
+
