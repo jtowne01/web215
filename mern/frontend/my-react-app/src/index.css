@@ -118,6 +118,7 @@ input {
     font-size: 15px;
     padding: 0 auto;
     margin-bottom: 20px;
+    margin-right: 5px;
 }
 
 button {
@@ -162,7 +163,7 @@ button#account:hover, td button:hover {
     color: #222222;
     overflow-y: auto; 
     max-width: 1300px;
-    max-height: 500px;
+    max-height: 650px;
     border: 4px solid black;
     border-radius: 8px;
     box-sizing: border-box;
