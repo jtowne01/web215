@@ -206,6 +206,7 @@ div#logreg {
 }
 
 @media (min-width: 600px) {
-  .header {grid-area: 1 / span 6;}
-  .container {grid-area: 2 / span 4;}
+  .header {grid-area: 2 / span 6;}
+  .container {grid-area: 2 / span 6;}
+  .div#logreg {grid-area: 2 / span 6;}
 }
