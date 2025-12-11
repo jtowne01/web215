@@ -210,8 +210,8 @@ and (min-width: 375px)
 and (max-width: 812px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (orientation: portrait) {
-.header {grid-area: 2 / span 4;}
-.container {grid-area: 2 / span 4;}
+.header {grid-area: 2 / span 3;}
+.container {grid-area: 2 / span 3;}
 .form#LoginReg {grid-area: 2 / span 4;}
 .button#account {
   margin-left: 40px;
