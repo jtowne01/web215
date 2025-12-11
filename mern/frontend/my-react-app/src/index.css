@@ -205,8 +205,15 @@ div#logreg {
   background-color:skyblue; 
 }
 
-@media (min-width: 600px) {
-  .header {grid-area: 2 / span 6;}
-  .container {grid-area: 2 / span 6;}
-  .div#logreg {grid-area: 2 / span 6;}
+@media only screen
+and (min-width: 375px)
+and (max-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+.header {grid-area: 2 / span 4;}
+.container {grid-area: 2 / span 4;}
+.form#LoginReg {grid-area: 2 / span 4;}
+.button#account {
+  margin-left: 40px;
+  }
 }
