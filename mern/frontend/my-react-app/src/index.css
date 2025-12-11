@@ -204,3 +204,8 @@ div#logreg {
   border-radius: 12px;
   background-color:skyblue; 
 }
+
+@media (min-width: 600px) {
+  .header {grid-area: 1 / span 6;}
+  .container {grid-area: 2 / span 4;}
+}
